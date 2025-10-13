@@ -1,0 +1,56 @@
+Git is a software and GitHub is a service
+EOF
+
+
+
+Git init s run once 
+Always check if the folder is sinitialized and if you need to initialize the reoository
+
+Git log will give you the logs about your commits
+A Linux log is a computer-generated text file that records events and activities happening within the operating system, its applications, and other services. They serve as a vital source of information for administrators and developers. 
+
+The --onaline option gives you the abstract view of the logs
+
+Atomc commits => one commit 1 bug, or 1 issue 
+For the commit message give it present but imperative tense for instance do this do that
+
+Git ignore you dont want to push api keys and passwords into your tracked changes
+In Linux, a synopsis is a concise, formal description of a command's syntax, which is found in its manual (man) page. It acts as a quick reference that shows all the possible ways a command can be invoked, including its mandatory and optional arguments and options. 
+
+Every commit is based on previous commits
+Command comma gives you the option to go and edit ehich hidden files you want to show in vscode 
+
+
+git config => --global user.name/ user.email or core.editor
+
+git log 
+gi log --oneline
+git branch => a branch is like a timeline
+
+git branch branchname
+
+git checkout branchname
+
+
+If you are on the branch you want to rename, use the -m (move) flag with the new name: 
+sh
+git branch -m <new-name>
+Use code with caution.
+
+If you are on a different branch (e.g., main or master) and want to rename another local branch, provide both the old and new names: 
+sh
+git branch -m <old-name> <new-name>
+
+
+You can use git switch or git checkout
+
+Commit before switchine to another branch
+
+git branch -d branchname => deletes the btanch
+
+git checkout -b footer
+The -b option is a convenience flag used with git checkout to create and switch to a new branch in a single command
+
+
+
+
