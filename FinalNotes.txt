@@ -59,4 +59,30 @@ git branch shows all your local branches.
 
 You need to manually delete branches you no longer need.
 
+Git diff shows you the differrences in the same fie, the differrence between time x and time y of the same file though
 
+git diff and git diff filename does nothing you must provide options to see its usability for instance --staged will show you the difference between when the dile file was staged and afer staging 
+
+
+IMPORtANT conflicting changes are not allowed to switch the branch without commiting changes, to switch to another branch and go on with working on the other branch you must stash yout changes and then stash apply after stash pop 
+
+Note: if you use switch and -c option it creates a naw branch and then switches youo to it
+
+When you have some changes which have not even been stages and you need to move to another branch thats where you need to stadh the changes
+
+Stashed changes can be moved to a different file  fot instance if i stashed my changes in one branch i can pop them in my main branch 
+
+
+git stashist shows you the list of stashes
+
+You can run the commands like git stash apply
+
+sTASH IS MEANT TO BE VERY TEMPORARY
+
+stash pop brings baxk the changes WHILE git stash apply soes apply changes and keep the changes in the stash 
+
+You can go to a speciefic commit by git checkout then the commit id whether the full or the minified one 
+This will cause the head to point at that commit
+
+
+Git reflog => this command moves where you were previously 
