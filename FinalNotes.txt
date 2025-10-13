@@ -53,4 +53,10 @@ The -b option is a convenience flag used with git checkout to create and switch 
 
 
 
+Merging = combining changes, not deleting the branch.
+
+git branch shows all your local branches.
+
+You need to manually delete branches you no longer need.
+
 
