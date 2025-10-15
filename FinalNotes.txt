@@ -85,4 +85,43 @@ You can go to a speciefic commit by git checkout then the commit id whether the 
 This will cause the head to point at that commit
 
 
-Git reflog => this command moves where you were previously 
+Git reflog => this command moves where you were previously
+
+
+
+In short, git reflog is your local, private history of everywhere your HEAD and branch pointers have been. It is a safety net for undoing almost any mistake, like a hard reset, a rebase, or deleting a branch. 
+
+
+Git rebase cab be used as an altenative merging tool or clean up tool
+
+it is used as a clean up tool
+
+Git rebase is meant to be run from the branch itself no the main branch
+This is VERy IMPORTANT!!!
+
+
+Thi indicates that im rebasing my branch to the master branch
+Dont rebase the commits you have shared 
+
+Never rebase the commits that are pushed on github
+
+NEVER DO THE REBASE WHEN YOU ARE ON THE MASTER BRANCH
+
+yOU CAN rename your remote name for github may be from origin to superman or whatevert
+ also you can remove the name
+
+ for git push you have to provide the name and the branchname
+
+the _u in git push -U origin main helps you streamline your workflow because it creates the upstream of code so tha you can easly push code to github
+
+TL;DR: What Are .md Files?
+
+.md = Markdown file (plain text with formatting).
+
+Used mainly for documentation (like README.md on GitHub).
+
+Lets you easily format text — headings, bold, italic, code, lists, links, and images.
+
+Looks clean in plain text and renders like a webpage on platforms like GitHub.
+
+Great for writing readable docs without needing HTML. 
