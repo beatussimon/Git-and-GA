@@ -1,0 +1,136 @@
+Github actions:
+Is a platform to automate developer workflows; software development
+workflows
+Many say its a ci/cd tool but that is just one of the ci/cd workflows
+that can be done with github actions
+
+What are these workflows:
+as a maintainer if a repo workflows you might want to automate:
+Taking an example of an open source project; if there is a bug:
+-> is it minor or major?
+=> is it reproducable?
+-> assign it to a contributor
+
+after the pull request:
+-> review the pull request
+-> is the bug fixed?
+=> merge to master branch
+
+
+after:
+-> prepare release notes
+-> update the version number
+
+The more contributors the more 
+the organizational effort is gonna be
+
+You want to automate as much as possible of those management tasks
+
+=> so ga was made, for every action that happens to your repository 
+ Automatic actions are executed in response
+
+and these things that happend to your repository are events in git
+hub space. for instance pull requests, issue, joined contributor, pull
+request merged to the master branch is an event 
+
+Also know that other applications or tools that you may have intergrated
+in your gh can also produce such events that you can respond to 
+with automatic actions, so when you automate these flows the process is 
+like this: 
+
+=> Litsen to an event and depending on what event happens
+=> Trigger some workflow
+
+So for instance when there is an issue you can trigger things like:
+-> sort
+-> Label the issue
+-> assign it to a contributor
+-> Reproduce the issue
+
+Each event you are gonna trigger is going to be a separate action
+And now the combination of those actions is what makes the workflow
+
+CI/CD with gh is a common workflow for your repository
+Commit your code=> tests => build =>  push => deploys the app in a
+deployment server
+
+Why use ga?
+-> use the same tool instead of third party intergration
+-> setting up the pipeline is easy 
+-> tool for developers
+
+Why its setup is easier?
+-> intergration with other tools is important
+You can have many combination of tools that you are using in your
+development process
+
+the given workflows in github actions are:
+-> deployment workflows
+-> ci workflows
+-> Publish your workflows
+
+
+Syntax of the workflow file:
+name: -> this is the name of the workflow and its for you to describe
+	it is displayed on the repo action page
+
+on: -> These are the events that we described
+
+In the github docs there is a detailed list of the events that trigger
+workflows and their usage[Links in description]
+
+
+When the events happens the jobs are then executed
+Job groups a set of actions that will be executed
+
+steps:
+	uses:actions/checkout@v2
+uses=> selects an action
+
+run=> runs a command-line command
+
+
+Where do all those commands happen and get executed?
+-> they get executed on github servers, so its managed by github 
+-> Each job in a workflow runs in a fresh virtual environment
+=> 1 job will run in a single server at a time
+
+by default multiple jobs will run in parallel; for consecutive tasks
+like deploying and then publishing the artifact you need one to 
+wait for the deployment to compelete and not run in parallel
+
+you can add the attribute:
+needs: reference_name
+=> the needs attr will tell the action to wait until the build is compelete
+	to continue to the other job dependant on it
+
+The servers provided by github are for ubuntu, windows and mac-os and you can 
+test for all the three 
+
+you have 
+runs-on:${ {matrix.os} }
+matrix: -> when runs on multiple system or multiple versions of java or whatever
+	the technology you are using
+os: [ubuntu-latest, windows-latest, macOs-latest] -> OS options is an array
+
+
+After creating everything you can see three builds being built in parallel
+
+DEMO:Building docker image and pushing it to a private repository
+
+You can create 1 docker repository for free and you can have your images there
+
+Whenever you want to have multiple commands to be run you can use the pipe command
+runs: |
+	your command
+	next commands
+
+as an altenative to commands we can use actions, and pushing a docker image is a common
+step that a lot of projects will be doing we expect an action to exist; so, you can go
+and find an action that does that
+
+You can create your secrets in github
+The yaml syntax for referncing values is ${{ the value }}
+
+
+Ubuntu has docker pre-installed
